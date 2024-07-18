@@ -1,4 +1,17 @@
-export const location = {
+export type Location = {
+  id: number;
+  name: string;
+  logo: string | null;
+  cover: string | null;
+  description: string;
+  active: boolean;
+  created_at: string;
+  updated_at: string;
+  category_id: number;
+  catalog_ids: number[];
+};
+
+export const location: Location = {
   id: 3,
   name: "Carpe Diem Lounge Club",
   logo: null,
@@ -12,16 +25,32 @@ export const location = {
   catalog_ids: [1],
 };
 
-export const catalogs = {
+export type Catalogs = {
+    id: number;
+    name: string;
+    active: boolean;
+    created_at: string;
+    updated_at: string;
+    };
+
+export const catalogs: Catalogs = {
   id: 1,
   name: "First Catalog",
   active: true,
-
   created_at: "2024-05-30T14:49:35.127266Z",
   updated_at: "2024-06-17T07:36:44.987183Z",
 };
 
-export const categories = [
+export type Category = {
+  id: number;
+  name: string;
+  logo: string;
+  active: boolean;
+  created_at: string;
+  updated_at: string;
+};
+
+export const categories: Category[] = [
   {
     id: 3,
     name: "SOFT DRINKS",
@@ -63,7 +92,20 @@ export const categories = [
     updated_at: "2024-06-17T09:28:59.328980Z",
   },
 ];
-export const products = [
+
+export type Product = {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  logo: string | null;
+  active: boolean;
+  created_at: string;
+  updated_at: string;
+  category_id: number;
+  catalog_id: number;
+};
+export const products: Product[] = [
   {
     id: 2,
     name: "Grilled Chicken Steak",
